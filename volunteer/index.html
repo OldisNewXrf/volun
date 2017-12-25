@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>志愿者服务</title>
+    <!--all-->
+    <link rel="stylesheet" href="//cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/css.css"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <!--nav-->
+    <link rel="stylesheet" href="css/chinaz.css"/>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/overallSituation.js"></script>
+    <script type="text/javascript" src="js/template_native.js"></script>
+
+</head>
+
+<body>
+<div class="header-meau">
+    <div class="header-left"><img src="img/nav_return.svg"/></div>
+    <div class="header-title">
+        <em>志愿者服务</em>
+    </div>
+</div>
+<div class="swiper-container swiper-container1" data-space-between='10' data-pagination='.swiper-pagination'
+     data-autoplay="1000" id="container_sliding" style="margin-top: 44px; ">
+    <div class="swiper-wrapper" id="swiper_img">
+
+    </div>
+</div>
+<div class="weui-grids" id="typerow">
+
+</div>
+<div class="latest_all">
+    <div class="latest" id="noteSee">
+        <div class="dynamic">
+            <h1>最新动态 </h1>
+            <span>更多</span>
+        </div>
+    </div>
+</div>
+
+<script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
+<script src="//cdn.bootcss.com/jquery-weui/1.0.1/js/swiper.min.js"></script>
+<script src="//cdn.bootcss.com/jquery-weui/1.0.1/js/city-picker.min.js"></script>
+<!--轮播图模板-->
+<script type="text/html" id="swiperList">
+    <%if(swiperList != null){%>
+    <%for(i = 0; i < swiperList.length; i ++) {%>
+    <div class="swiper-slide"><img src="<%=swiperList[i].imageUrl%>" alt="">
+        <h2 class="swiper-title"><a href="<%=swiperList[i].link%>">志愿服务</a></h2></div>
+    <%}%>
+    <%}%>
+</script>
+<!--类型模板-->
+<script type="text/html" id="typeList">
+    <%if(typeList != null){%>
+    <%for(i = 0; i < typeList.length; i ++) {%>
+    <a onclick="typechoose(this)" class="weui-grid js_grid Sudoku_all" id="<%=typeList[i].objectId%>" name="<%=typeList[i].type%>">
+        <div class="weui-grid__icon Sudoku">
+            <img src="img/qg.png" alt="">
+        </div>
+        <p class="weui-grid__label">
+            <%=typeList[i].name%>
+        </p>
+    </a>
+    <%if(i == 0){%>
+    <a href="recruit.html" class="weui-grid js_grid Sudoku_all">
+        <div class="weui-grid__icon Sudoku">
+            <img src="img/qg.png" alt="">
+        </div>
+        <p class="weui-grid__label">
+            活动招募
+        </p>
+    </a>
+    <a href="service.html" class="weui-grid js_grid Sudoku_all">
+        <div class="weui-grid__icon Sudoku">
+            <img src="img/qg.png" alt="">
+        </div>
+        <p class="weui-grid__label">
+            入团申请
+        </p>
+    </a>
+    <%}%>
+    <%}%>
+    <%}%>
+</script>
+<!--最新动态-->
+<script id="noteList" type="text/html">
+    <%if(noteList != null){%>
+    <%for(i = 0; i < noteList.length; i ++) {%>
+    <%if(i>2){
+    break;
+    %>
+    <%}%>
+    <a class="weui-layout" style="margin-bottom:8px ; display: block" >
+        <div class="layout-left">
+            <img src="<%=noteList[i].imageUrl%>"/>
+        </div>
+        <div class="layout-right">
+            <h1><%=noteList[i].title%></h1>
+            <p style="bottom:5px;"><%=noteList[i].createdAt%></i><em><%=noteList[i].type.name%></em></p>
+        </div>
+    </a>
+    <%}%>
+    <%}%>
+</script>
+<!--活动-->
+<script id="actList" type="text/html">
+    <%if(actList != null){%>
+    <%for(i = 0; i < actList.length; i ++) {%>
+    <%if(i>2){
+        break;
+    %>
+    <%}%>
+    <div class="advertising_all">
+        <a class="advertising_bg" href="event.html?objectId=<%=actList[i].objectId%>">
+            <img src="images/hot-bgd.jpg"/>
+            <div class="advertising">
+                <h1><%=actList[i].title%></h1>
+                <div class="recruit_time recruit_time_white" style="padding: 0;">
+                    <p><i>剩余时间：</i>1天12小时10分钟</p>
+                </div>
+            </div>
+            <div class="triangle-topleft">
+                <img src="img/labelling.svg"/>
+            </div>
+        </a>
+    </div>
+    <%}%>
+    <%}%>
+</script>
+
+
+<!--轮播图-->
+<script type="text/javascript">
+    var swiper1 = new Swiper('.swiper-container1', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        autoplay: 4000
+    });
+
+    var swiper2 = new Swiper('.swiper-container2', {
+        slidesPerView: 3,
+        paginationClickable: true,
+        spaceBetween: 30,
+        freeMode: true
+    });
+
+    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        $(".swiper-slide").children("img").css("width", "100%");
+        $(".swiper-slide").children("img").css("height", Math.round(document.documentElement.clientWidth / 2));
+        $(".swiper-slide").children("img").each(function () {
+            $(this).attr("src", $(this).attr("src") + "?x-oss-process=image/resize,m_fill,h_" + Math.round(document.documentElement.clientWidth / 2) + ",limit_0,w_" + document.body.clientWidth);
+        })
+    } else {
+        $(".swiper-slide").children("img").css("width", "100%");
+        $(".swiper-slide").children("img").css("height", Math.round(document.documentElement.clientWidth / 3));
+        $(".swiper-slide").children("img").each(function () {
+            $(this).attr("src", $(this).attr("src") + "?x-oss-process=image/resize,m_fill,h_" + Math.round(document.documentElement.clientWidth / 3) + ",limit_0,w_" + document.body.clientWidth);
+        })
+    }
+</script>
+
+<script>
+
+    var curr = 1;
+    var houseId = getUrlParam("houseId");
+    var userId = getUrlParam("userId");
+
+    $(function () {
+        swiperSee();
+        typeview();
+        notebytype("", curr);
+        act();
+    });
+
+
+    //轮播图
+    function swiperSee() {
+        $.ajax({
+            "url": "/jiajianiu/front/volunteers/show/list",
+            "type": "post",
+            "dataType": "json",
+            async: false,
+            "success": function (res) {
+
+                var data = {
+                    swiperList: res.data,
+                };
+                var html = template('swiperList', data);
+                $("#swiper_img").html(html);
+
+            }
+
+        });
+    }
+
+
+    //活动类型显示
+    function typeview() {
+        $.ajax({
+            "url": "/jiajianiu/front/volunteers/type/list",
+            "type": "get",
+            "dataType": "json",
+            async: false,
+            "success": function (res) {
+
+                var data = {
+                    typeList: res.data,
+                };
+                var html = template('typeList', data);
+                $("#typerow").html(html);
+
+            }
+
+        });
+    }
+
+    //活动文章显示
+    function notebytype(typeId, curr) {
+        $.ajax({
+            "url": "/jiajianiu/front/volunteers/note/list",
+            "data": {
+                houseId: houseId,
+                pageIndex: curr,
+                pageSize: 10,
+                typeId: typeId
+            },
+            "type": 'post',
+            "dataType": 'json',
+            "success": function (res) {
+
+                var data = {
+                    noteList: res.data,
+                };
+                var html = template('noteList', data);
+
+                $("#noteSee").append(html);
+            },
+
+        });
+    }
+
+    //活动显示
+    function act() {
+        $.ajax({
+            "url": "/jiajianiu/front/volunteers/activity/list",
+            "data": {
+                houseId: houseId,
+                pageIndex: curr,
+                pageSize: 10
+            },
+            "type": 'post',
+            "dataType": 'json',
+            "success": function (res) {
+
+                var data = {
+                    actList: res.data,
+                };
+                var html = template('actList', data);
+
+                $("#noteSee").append(html);
+            },
+
+        });
+    }
+
+    //活动类型页面跳转
+    function typechoose(obj) {
+        switch (obj.name) {
+            case "1" :
+                window.location.href = "affiche.html?typeId=" + obj.id;
+                break;
+            case "2" :
+                window.location.href = "youth.html?typeId=" + obj.id;
+                break;
+            case "3" :
+                window.location.href = "Elegant.html?typeId=" + obj.id;
+                break;
+            case "4" :
+                window.location.href = "welfare.html?typeId=" + obj.id;
+                break;
+        }
+    }
+
+
+</script>
+</body>
+
+</html>

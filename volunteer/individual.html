@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>志愿者服务</title>
+    <!--all-->
+    <link rel="stylesheet" href="//cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/css.css"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <!--nav-->
+    <link rel="stylesheet" href="css/chinaz.css"/>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/js.js"></script>
+    <!--字体引用-->
+    <link rel="stylesheet" type="text/css" href="css/demo.css"/>
+    <script src="js/iconfont.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+        .icon {
+            width: 1.2em;
+            height: 1.2em;
+            vertical-align: -0.15em;
+            /*fill:#999999;*/
+            overflow: hidden;
+        }
+
+        .icon:link {
+            fill: #999999;
+        }
+    </style>
+
+</head>
+
+<body style="background:#F1F1F1;">
+<div id="b1" style="display: block">
+    <div class="header-meau">
+        <div class="header-left"><img src="img/nav_return.svg"/></div>
+        <div class="header-title">
+            <em>入团申请</em>
+        </div>
+    </div>
+    <div class="individual">
+        <div class="weui-cells weui-cells_form" style="border-radius:8px ;">
+            <div class="individual_title">
+                <h1>个人信息</h1>
+            </div>
+            <div class="weui-cell individual_all">
+                <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
+                <div class="weui-cell__bd">
+                    <input id="username" class="weui-input individual_input" type="text" placeholder="请输入真实姓名"
+                           onfocus="this.placeholder=''" onblur="this.placeholder='请输入真实姓名'" required="required">
+                </div>
+            </div>
+
+            <div class="weui-cell weui-cell_select weui-cell_select-after ">
+                <div class="weui-cell__hd" style="padding:15px 5px;">
+                    <label  class="weui-label">性别</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <select class="weui-select" name="select2" id="sex">
+                        <option value="男">男</option>
+                        <option value="女">女</option>
+                    </select>
+                </div>
+            </div>
+            <div class="weui-cell individual_all">
+                <div class="weui-cell__hd"><label  class="weui-label">出生年月</label></div>
+                <div class="weui-cell__bd year">
+                    <input id="birth" class="weui-input individual_year" type="date" >
+                </div>
+            </div>
+            <div class="weui-cells weui-cells_form " style=" margin-top: 0;">
+                <div class="weui-cell individual_all">
+                    <div class="weui-cell__hd"><label class="weui-label">联系号码</label></div>
+                    <div class="weui-cell__bd">
+                        <input id="phone" class="weui-input individual_input" type="tel" pattern="[0-11]*" placeholder="请输入手机号"
+                               onfocus="this.placeholder=''" onblur="this.placeholder='请输入手机号'">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="submit_apply" style="width: 100%; padding:30px 0; background: none;">
+            <form class="submit_all">
+                <button type="submit" ><a style="display: block" href="#b2">下一步</a></button>
+            </form>
+        </div>
+
+        <div class="small_meanu">
+            <ul>
+                <li class="meanu_sub">个人信息</li>
+                <li class="meanu_sub">&gt;</li>
+                <li>服务项目</li>
+                <li>&gt;</li>
+                <li>服务时间</li>
+            </ul>
+        </div>
+
+
+    </div>
+</div>
+<div id="b2" class="b2" style="display: none">
+    <div class="header-meau">
+        <div class="header-left"><img src="img/nav_return.svg"/></div>
+        <div class="header-title">
+            <em>入团申请</em>
+        </div>
+    </div>
+
+    <div class="service">
+
+        <div class="weui-cells weui-cells_checkbox service_all">
+            <div class="individual_title">
+                <h1>服务项目</h1>
+            </div>
+            <label class="weui-cell weui-check__label service_list" for="s22">
+                <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                    <input type="checkbox" class="weui-check" name="checkbox1" id="s22">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                    </svg>
+                </div>
+                <div class="weui-cell__bd">
+                    <p>关爱服务</p>
+                </div>
+            </label>
+            <label class="weui-cell weui-check__label service_list" for="s23">
+                <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                    <input type="checkbox" name="checkbox1" class="weui-check" id="s23">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                    </svg>
+                </div>
+                <div class="weui-cell__bd">
+                    <p>公共文明</p>
+                </div>
+            </label>
+            <label class="weui-cell weui-check__label service_list" for="s24">
+                <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                    <input type="checkbox" class="weui-check" name="checkbox1" id="s24">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                    </svg>
+                </div>
+                <div class="weui-cell__bd">
+                    <p>社区服务</p>
+                </div>
+            </label>
+            <label class="weui-cell weui-check__label service_list" for="s25">
+                <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                    <input type="checkbox" class="weui-check" name="checkbox1" id="s25">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                    </svg>
+                </div>
+                <div class="weui-cell__bd">
+                    <p>健康救助</p>
+                </div>
+            </label>
+            <label class="weui-cell weui-check__label service_list" for="s26">
+                <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                    <input type="checkbox" class="weui-check" name="checkbox1" id="s26">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                    </svg>
+                </div>
+                <div class="weui-cell__bd">
+                    <p>环境保护</p>
+                </div>
+            </label>
+            <label class="weui-cell weui-check__label service_list" for="s27">
+                <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                    <input type="checkbox" class="weui-check" name="checkbox1" id="s27">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                    </svg>
+                </div>
+                <div class="weui-cell__bd">
+                    <p>赛会服务</p>
+                </div>
+            </label>
+            <label class="weui-cell weui-check__label service_list" for="s28">
+                <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                    <input type="checkbox" class="weui-check" name="checkbox1" id="s28">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                    </svg>
+                </div>
+                <div class="weui-cell__bd">
+                    <p>宣传教育</p>
+                </div>
+            </label>
+
+
+        </div>
+
+        <div class="submit_apply" style="width: 100%; padding:30px 0; background: none;">
+            <form class="submit_all">
+                <button type="submit" ><a style="display: block" href="#b3">下一步</a></button>
+            </form>
+        </div>
+
+        <div class="small_meanu">
+            <ul>
+                <li>个人信息</li>
+                <li>&gt;</li>
+                <li class="meanu_sub">服务项目</li>
+                <li class="meanu_sub">&gt;</li>
+                <li>服务时间</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="b3" class="b3" style="display: none">
+    <div class="header-meau">
+        <div class="header-left"><img src="img/nav_return.svg"/></div>
+        <div class="header-title">
+            <em>入团申请</em>
+        </div>
+    </div>
+    <div class="dates">
+        <div class="individual_title" style="border-radius:8px 8px 0 0;">
+            <h1>服务项目</h1>
+        </div>
+        <div class="cycle" style="border-radius: 0 0 8px 8px;">
+            <h2>可提供服务时间：</h2>
+            <table>
+                <tr>
+                    <th style="width:50px;">
+                        <div class="out">
+                            <i>日期</i>
+                            <em>时间</em>
+                        </div>
+                    </th>
+                    <th>日</th>
+                    <th>一</th>
+                    <th>二</th>
+                    <th>三</th>
+                    <th>四</th>
+                    <th>五</th>
+                    <th>六</th>
+                </tr>
+                <tr>
+                    <td class="t1">上</td>
+                    <td>
+                        <label for="s11">
+                            <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                                <input type="checkbox" name="checkbox1" class="weui-check" id="s11">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                                </svg>
+                            </div>
+                        </label>
+                    </td>
+                    <td>
+                        <label for="s12">
+                            <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                                <input type="checkbox" name="checkbox1" class="weui-check" id="s12">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                                </svg>
+                            </div>
+                        </label>
+                    </td>
+                    <td>
+                        <label for="s13">
+                            <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                                <input type="checkbox" name="checkbox1" class="weui-check" id="s13">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                                </svg>
+                            </div>
+                        </label>
+                    </td>
+                    <td><label for="s14">
+                        <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s14">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                            </svg>
+                        </div>
+                    </label></td>
+                    <td><label for="s15">
+                        <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s15">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                            </svg>
+                        </div>
+                    </label></td>
+                    <td><label for="s16">
+                        <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s16">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                            </svg>
+                        </div>
+                    </label></td>
+                    <td><label for="s17">
+                        <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s17">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                            </svg>
+                        </div>
+                    </label></td>
+                </tr>
+                <tr>
+                    <td class="t1">下</td>
+                    <td><label for="s18">
+                        <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s18">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                            </svg>
+                        </div>
+                    </label></td>
+                    <td><label for="s19">
+                        <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s19">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                            </svg>
+                        </div>
+                    </label></td>
+                    <td><label for="s10">
+                        <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s10">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                            </svg>
+                        </div>
+                    </label></td>
+                    <td><label for="s1">
+                        <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s1">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                            </svg>
+                        </div>
+                    </label></td>
+                    <td><label for="s2">
+                        <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s2">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                            </svg>
+                        </div>
+                    </label></td>
+                    <td><label for="s3">
+                        <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s3">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                            </svg>
+                        </div>
+                    </label></td>
+                    <td><label for="s4">
+                        <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s4">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                            </svg>
+                        </div>
+                    </label></td>
+                </tr>
+                <tr>
+                    <td class="t1">晚</td>
+                    <td><label for="s5">
+                        <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s5">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                            </svg>
+                        </div>
+                    </label></td>
+                    <td><label for="s6">
+                        <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s6">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                            </svg>
+                        </div>
+                    </label></td>
+                    <td><label for="s7">
+                        <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s7">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                            </svg>
+                        </div>
+                    </label></td>
+                    <td><label for="s8">
+                        <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s8">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                            </svg>
+                        </div>
+                    </label></td>
+                    <td><label for="s9">
+                        <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s9">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                            </svg>
+                        </div>
+                    </label></td>
+                    <td><label for="sq">
+                        <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="sq">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                            </svg>
+                        </div>
+                    </label></td>
+                    <td><label for="sa">
+                        <div class="weui-cell__hd" onclick="checkboxclick(this)">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="sa">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangxingweixuanzhong"></use>
+                            </svg>
+                        </div>
+                    </label></td>
+                </tr>
+
+            </table>
+        </div>
+        <div class="submit_apply" style="width: 100%; padding:30px 0; background: none;">
+            <form class="submit_all">
+                <button type="submit">申请加入</button>
+
+
+            </form>
+            <label class="weui-cell weui-check__label dates_signed" for="sub">
+                <div class="weui-cell__hd" onclick="subcheckboxclick(this)">
+                    <input type="checkbox" class="weui-check" name="checkbox1" id="sub">
+                    <svg class="icon" aria-hidden="true" style="width: 1.1em;height:1.1em; margin-right: 5px;">
+                        <use xlink:href="#icon-yuanxingweixuanzhong"></use>
+                    </svg>
+
+                </div>
+                <div class="weui-cell__bd">
+                    <p style="color: #999999;">本人同意签署<i style="color: #FB716F;">《自愿者注册协议》</i></p>
+                </div>
+            </label>
+        </div>
+
+        <div class="small_meanu">
+            <ul>
+                <li>个人信息</li>
+                <li>&gt;</li>
+                <li>服务项目</li>
+                <li>&gt;</li>
+                <li class="meanu_sub">服务时间</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
+<script src="//cdn.bootcss.com/jquery-weui/1.0.1/js/swiper.min.js"></script>
+<script src="//cdn.bootcss.com/jquery-weui/1.0.1/js/city-picker.min.js"></script>
+
+<!--wenzi-->
+<script>
+
+    $(".weui-input").focus(function () {
+        $(".small_meanu").hide();
+    })
+
+    $(".weui-input").blur(function () {
+        $(".small_meanu").show();
+    })
+
+
+    function checkboxclick(obj) {
+        /*alert("1");
+        alert("2");*/
+
+        if ($(obj).children().prop("checked")) {
+//          alert("选中");
+            $(obj).children("svg").children("use").attr("xlink:href", "#icon-fangxingxuanzhongfill");
+            $(obj).children("svg").attr("fill", "#FB716F");
+        } else {
+//       	$(obj).children("svg").children()
+//           alert("没有选中");
+
+
+            $(obj).children("svg").children("use").attr("xlink:href", "#icon-fangxingweixuanzhong");
+            $(obj).children("svg").attr("fill", "#666666");
+        }
+
+
+    }
+
+    function subcheckboxclick(obj) {
+        /*alert("1");
+        alert("2");*/
+        if ($(obj).children().prop("checked")) {
+            //          alert("选中");
+            $(obj).children("svg").children("use").attr("xlink:href", "#icon-danxuan");
+            $(obj).children("svg").attr("fill", "#FB716F");
+        } else {
+            //       	$(obj).children("svg").children()
+            //           alert("没有选中");
+
+            $(obj).children("svg").children("use").attr("xlink:href", "#icon-yuanxingweixuanzhong");
+            $(obj).children("svg").attr("fill", "#666666");
+        }
+
+    }
+
+</script>
+
+
+<script>
+    function hashChanged(hashObj) {
+        //变化之后的url
+        var newhash = hashObj.newURL.split('#')[1];
+        //变化之前的url
+        var oldhash = hashObj.oldURL.split('#')[1];
+        //将对应的hash下界面显示和隐藏
+        document.getElementById(oldhash).style.display = 'none';
+        document.getElementById(newhash).style.display = 'block';
+    }
+    //监听路由变化
+    window.onhashchange = hashChanged;
+
+    var userId = getUrlParam("userId");
+    var username = $("#username").value;
+    var sex = $("#sex").value;
+    var birth = $("#birth").value;
+    var phone = $("#phone").value;
+
+    var volunteersUser = {
+        name: username,
+        sex: sex,
+        birth: birth,
+        userPhone: phone
+    };
+
+    //添加志愿者
+    function userAdd() {
+        $.ajax({
+            "url": "/jiajianiu/front/volunteers/user/add",
+            "data": {
+                userId: userId,
+                volunteersUser: volunteersUser,
+                volunteersUserOvertimes: [],
+
+
+            },
+            "type": 'post',
+            "dataType": 'json',
+            "success": function (res) {
+
+                var data = {
+                    noteList: res.data,
+                };
+                var html = template('noteList', data);
+
+                $("#noteSee").append(html);
+            },
+
+        });
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>志愿者服务</title>
+    <!--all-->
+    <link rel="stylesheet" href="//cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/css.css"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/overallSituation.js"></script>
+    <script type="text/javascript" src="js/template_native.js"></script>
+</head>
+
+<body>
+
+<div class="header-meau">
+    <div class="header-left"><img src="img/nav_return.svg"/></div>
+    <div class="header-title">
+        <em>青年之声</em>
+    </div>
+</div>
+<!--下拉刷新-->
+<div class="weui-pull-to-refresh__layer">
+    <div class='weui-pull-to-refresh__arrow'></div>
+    <div class='weui-pull-to-refresh__preloader'></div>
+    <div class="down">刷新页面</div>
+    <div class="up" style="margin-top: 50px;">释放刷新</div>
+    <div class="refresh" style="margin-top: 50px;">正在刷新</div>
+</div>
+<!--帖子模板-->
+<div class="affiche" id="noteSee">
+</div>
+<!--滚动加载-->
+<div class="weui-loadmore" id="over">
+    <i class="weui-loading"></i>
+    <span class="weui-loadmore__tips">正在加载</span>
+</div>
+
+<div class="footer-bg" style="display: none;" id="over1">
+    <p class="boom">
+        <a href="#">没有更多内容了</a>
+    </p>
+
+</div>
+
+<script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
+<script src="//cdn.bootcss.com/jquery-weui/1.0.1/js/swiper.min.js"></script>
+<script src="//cdn.bootcss.com/jquery-weui/1.0.1/js/city-picker.min.js"></script>
+
+<script type="text/html" id="noteList">
+    <%if(noteList != null){%>
+    <%for(i = 0; i < noteList.length; i ++) {%>
+    <div class="weui-layout">
+        <div class="layout-left">
+            <img src="<%=noteList[i].imageUrl%>"/>
+        </div>
+        <div class="layout-right">
+            <h1><%=noteList[i].title%></h1>
+            <p><%=noteList[i].createdAt%></p>
+        </div>
+    </div>
+    <%}%>
+    <%}%>
+</script>
+
+<script>
+    var typeId = getUrlParam("typeId");
+    var curr = 1;
+    var houseId = getUrlParam("houseId");
+
+    //初始化刷新
+    $(document.body).pullToRefresh();
+    //刷新
+    $(document.body).pullToRefresh().on('pull-to-refresh', function (done) {
+        notebytype(typeId, 1);
+        var self = this;
+        setTimeout(function () {
+            $(self).pullToRefreshDone();
+        }, 500)
+    });
+    //初始化加载
+    $(document.body).infinite();
+    var loading = false; //状态标记
+    $(document.body).infinite().on("infinite", function () {
+        if (loading) return;
+        loading = true;
+        setTimeout(function () {
+            curr = curr + 1;
+            notebytype(typeId, curr);
+            //  $("#note").append("<p> 我是新加载的内容 </p>");
+            loading = false;
+        }, 500); //模拟延迟
+    });
+
+    $(function () {
+        notebytype(typeId, curr);
+    });
+
+    //活动文章显示
+    function notebytype(typeId, curr) {
+        $.ajax({
+            "url": "/jiajianiu/front/volunteers/note/list",
+            "data": {
+                houseId: houseId,
+                pageIndex: curr,
+                pageSize: 10,
+                typeId: typeId
+            },
+            "type": 'post',
+            "dataType": 'json',
+            "success": function (res) {
+
+                var data = {
+                    noteList: res.data,
+                };
+                var html = template('noteList', data);
+
+
+                if (curr == 1) {
+                    $("#noteSee").html(html);
+                    if (res.page.currentPage == res.page.totalPage || res.page.totalPage == 0) {
+                        $(document.body).destroyInfinite();
+                        $("#over").hide();
+                        $("#over1").show();
+                    }
+                } else {
+                    $("#noteSee").append(html);
+                    if (res.page.currentPage == res.page.totalPage) {
+                        $(document.body).destroyInfinite();
+                        $("#over").hide();
+                        $("#over1").show();
+                    }
+                }
+            },
+
+        });
+    }
+</script>
+</body>
+
+</html>
