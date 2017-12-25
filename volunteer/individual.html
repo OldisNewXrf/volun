@@ -57,7 +57,7 @@
 
             <div class="weui-cell weui-cell_select weui-cell_select-after ">
                 <div class="weui-cell__hd" style="padding:15px 5px;">
-                    <label  class="weui-label">性别</label>
+                    <label class="weui-label">性别</label>
                 </div>
                 <div class="weui-cell__bd">
                     <select class="weui-select" name="select2" id="sex">
@@ -67,16 +67,17 @@
                 </div>
             </div>
             <div class="weui-cell individual_all">
-                <div class="weui-cell__hd"><label  class="weui-label">出生年月</label></div>
+                <div class="weui-cell__hd"><label class="weui-label">出生年月</label></div>
                 <div class="weui-cell__bd year">
-                    <input id="birth" class="weui-input individual_year" type="date" >
+                    <input id="birth" class="weui-input individual_year" type="date">
                 </div>
             </div>
             <div class="weui-cells weui-cells_form " style=" margin-top: 0;">
                 <div class="weui-cell individual_all">
                     <div class="weui-cell__hd"><label class="weui-label">联系号码</label></div>
                     <div class="weui-cell__bd">
-                        <input id="phone" class="weui-input individual_input" type="tel" pattern="[0-11]*" placeholder="请输入手机号"
+                        <input id="phone" class="weui-input individual_input" type="tel" pattern="[0-11]*"
+                               placeholder="请输入手机号"
                                onfocus="this.placeholder=''" onblur="this.placeholder='请输入手机号'">
                     </div>
                 </div>
@@ -86,7 +87,7 @@
 
         <div class="submit_apply" style="width: 100%; padding:30px 0; background: none;">
             <form class="submit_all">
-                <button type="submit" ><a style="display: block" href="#b2">下一步</a></button>
+                <button type="submit"><a style="display: block" href="#b2">下一步</a></button>
             </form>
         </div>
 
@@ -118,9 +119,9 @@
                 <h1>服务项目</h1>
             </div>
             <label class="weui-cell weui-check__label service_list" for="s22">
-                <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                    <input type="checkbox" class="weui-check" name="checkbox1" id="s22">
-                    <svg class="icon" aria-hidden="true">
+                <div class="weui-cell__hd" onclick="checkboxclick(this)" name="1" >
+                    <input type="checkbox" class="weui-check" name="0" id="s22" value="1">
+                    <svg class="icon" aria-hidden="true" name="1">
                         <use xlink:href="#icon-fangxingweixuanzhong"></use>
                     </svg>
                 </div>
@@ -130,7 +131,7 @@
             </label>
             <label class="weui-cell weui-check__label service_list" for="s23">
                 <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                    <input type="checkbox" name="checkbox1" class="weui-check" id="s23">
+                    <input type="checkbox" name="0" class="weui-check" id="s23" value="2">
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-fangxingweixuanzhong"></use>
                     </svg>
@@ -141,7 +142,7 @@
             </label>
             <label class="weui-cell weui-check__label service_list" for="s24">
                 <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                    <input type="checkbox" class="weui-check" name="checkbox1" id="s24">
+                    <input type="checkbox" class="weui-check" name="0" id="s24" value="3">
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-fangxingweixuanzhong"></use>
                     </svg>
@@ -151,8 +152,8 @@
                 </div>
             </label>
             <label class="weui-cell weui-check__label service_list" for="s25">
-                <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                    <input type="checkbox" class="weui-check" name="checkbox1" id="s25">
+                <div class="weui-cell__hd" onclick="checkboxclick(this)" >
+                    <input type="checkbox" class="weui-check" name="0" id="s25" value="4">
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-fangxingweixuanzhong"></use>
                     </svg>
@@ -163,7 +164,7 @@
             </label>
             <label class="weui-cell weui-check__label service_list" for="s26">
                 <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                    <input type="checkbox" class="weui-check" name="checkbox1" id="s26">
+                    <input type="checkbox" class="weui-check" name="0" id="s26" value="5">
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-fangxingweixuanzhong"></use>
                     </svg>
@@ -174,7 +175,7 @@
             </label>
             <label class="weui-cell weui-check__label service_list" for="s27">
                 <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                    <input type="checkbox" class="weui-check" name="checkbox1" id="s27">
+                    <input type="checkbox" class="weui-check" name="0" id="s27" value="6">
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-fangxingweixuanzhong"></use>
                     </svg>
@@ -185,7 +186,7 @@
             </label>
             <label class="weui-cell weui-check__label service_list" for="s28">
                 <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                    <input type="checkbox" class="weui-check" name="checkbox1" id="s28">
+                    <input type="checkbox" class="weui-check" name="0" id="s28" value="7">
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-fangxingweixuanzhong"></use>
                     </svg>
@@ -200,7 +201,7 @@
 
         <div class="submit_apply" style="width: 100%; padding:30px 0; background: none;">
             <form class="submit_all">
-                <button type="submit" ><a style="display: block" href="#b3">下一步</a></button>
+                <button type="submit"><a style="display: block" href="#b3">下一步</a></button>
             </form>
         </div>
 
@@ -249,7 +250,7 @@
                     <td>
                         <label for="s11">
                             <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                                <input type="checkbox" name="checkbox1" class="weui-check" id="s11">
+                                <input type="checkbox" name="checkbox1" class="weui-check" id="s11" value="11">
                                 <svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-fangxingweixuanzhong"></use>
                                 </svg>
@@ -259,7 +260,7 @@
                     <td>
                         <label for="s12">
                             <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                                <input type="checkbox" name="checkbox1" class="weui-check" id="s12">
+                                <input type="checkbox" name="checkbox1" class="weui-check" id="s12" value="12">
                                 <svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-fangxingweixuanzhong"></use>
                                 </svg>
@@ -269,7 +270,7 @@
                     <td>
                         <label for="s13">
                             <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                                <input type="checkbox" name="checkbox1" class="weui-check" id="s13">
+                                <input type="checkbox" name="checkbox1" class="weui-check" id="s13" value="13">
                                 <svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-fangxingweixuanzhong"></use>
                                 </svg>
@@ -278,7 +279,7 @@
                     </td>
                     <td><label for="s14">
                         <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                            <input type="checkbox" name="checkbox1" class="weui-check" id="s14">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s14" value="14">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-fangxingweixuanzhong"></use>
                             </svg>
@@ -286,7 +287,7 @@
                     </label></td>
                     <td><label for="s15">
                         <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                            <input type="checkbox" name="checkbox1" class="weui-check" id="s15">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s15" value="15">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-fangxingweixuanzhong"></use>
                             </svg>
@@ -294,7 +295,7 @@
                     </label></td>
                     <td><label for="s16">
                         <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                            <input type="checkbox" name="checkbox1" class="weui-check" id="s16">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s16" value="16">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-fangxingweixuanzhong"></use>
                             </svg>
@@ -302,7 +303,7 @@
                     </label></td>
                     <td><label for="s17">
                         <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                            <input type="checkbox" name="checkbox1" class="weui-check" id="s17">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s17" value="17">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-fangxingweixuanzhong"></use>
                             </svg>
@@ -313,7 +314,7 @@
                     <td class="t1">下</td>
                     <td><label for="s18">
                         <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                            <input type="checkbox" name="checkbox1" class="weui-check" id="s18">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s18" value="18">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-fangxingweixuanzhong"></use>
                             </svg>
@@ -321,7 +322,7 @@
                     </label></td>
                     <td><label for="s19">
                         <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                            <input type="checkbox" name="checkbox1" class="weui-check" id="s19">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s19" value="19">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-fangxingweixuanzhong"></use>
                             </svg>
@@ -329,7 +330,7 @@
                     </label></td>
                     <td><label for="s10">
                         <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                            <input type="checkbox" name="checkbox1" class="weui-check" id="s10">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s10" value="10">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-fangxingweixuanzhong"></use>
                             </svg>
@@ -337,7 +338,7 @@
                     </label></td>
                     <td><label for="s1">
                         <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                            <input type="checkbox" name="checkbox1" class="weui-check" id="s1">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s1" value="1">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-fangxingweixuanzhong"></use>
                             </svg>
@@ -345,7 +346,7 @@
                     </label></td>
                     <td><label for="s2">
                         <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                            <input type="checkbox" name="checkbox1" class="weui-check" id="s2">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s2" value="2">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-fangxingweixuanzhong"></use>
                             </svg>
@@ -353,7 +354,7 @@
                     </label></td>
                     <td><label for="s3">
                         <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                            <input type="checkbox" name="checkbox1" class="weui-check" id="s3">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s3" value="3">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-fangxingweixuanzhong"></use>
                             </svg>
@@ -361,7 +362,7 @@
                     </label></td>
                     <td><label for="s4">
                         <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                            <input type="checkbox" name="checkbox1" class="weui-check" id="s4">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s4" value="4">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-fangxingweixuanzhong"></use>
                             </svg>
@@ -372,7 +373,7 @@
                     <td class="t1">晚</td>
                     <td><label for="s5">
                         <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                            <input type="checkbox" name="checkbox1" class="weui-check" id="s5">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s5" value="5">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-fangxingweixuanzhong"></use>
                             </svg>
@@ -380,7 +381,7 @@
                     </label></td>
                     <td><label for="s6">
                         <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                            <input type="checkbox" name="checkbox1" class="weui-check" id="s6">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s6" value="6">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-fangxingweixuanzhong"></use>
                             </svg>
@@ -388,7 +389,7 @@
                     </label></td>
                     <td><label for="s7">
                         <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                            <input type="checkbox" name="checkbox1" class="weui-check" id="s7">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s7" value="7">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-fangxingweixuanzhong"></use>
                             </svg>
@@ -396,7 +397,7 @@
                     </label></td>
                     <td><label for="s8">
                         <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                            <input type="checkbox" name="checkbox1" class="weui-check" id="s8">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s8" value="8">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-fangxingweixuanzhong"></use>
                             </svg>
@@ -404,7 +405,7 @@
                     </label></td>
                     <td><label for="s9">
                         <div class="weui-cell__hd" onclick="checkboxclick(this)">
-                            <input type="checkbox" name="checkbox1" class="weui-check" id="s9">
+                            <input type="checkbox" name="checkbox1" class="weui-check" id="s9" value="9">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-fangxingweixuanzhong"></use>
                             </svg>
@@ -442,7 +443,6 @@
                     <svg class="icon" aria-hidden="true" style="width: 1.1em;height:1.1em; margin-right: 5px;">
                         <use xlink:href="#icon-yuanxingweixuanzhong"></use>
                     </svg>
-
                 </div>
                 <div class="weui-cell__bd">
                     <p style="color: #999999;">本人同意签署<i style="color: #FB716F;">《自愿者注册协议》</i></p>
@@ -483,18 +483,29 @@
     function checkboxclick(obj) {
         /*alert("1");
         alert("2");*/
+        var arrnum = $(obj).children("input").val();
+
 
         if ($(obj).children().prop("checked")) {
 //          alert("选中");
+            $(obj).children("input").attr("name","1");
+            // console.log($(obj).children("input").val());
             $(obj).children("svg").children("use").attr("xlink:href", "#icon-fangxingxuanzhongfill");
             $(obj).children("svg").attr("fill", "#FB716F");
+            arr1.push(arrnum);
         } else {
 //       	$(obj).children("svg").children()
 //           alert("没有选中");
 
-
+            $(obj).children("input").attr("name","0");
             $(obj).children("svg").children("use").attr("xlink:href", "#icon-fangxingweixuanzhong");
             $(obj).children("svg").attr("fill", "#666666");
+            for (var i = 0; i < arr1.length ; i++) {
+                if(arrnum == arr1[i]){
+                    arr1.splice(i,1);
+                    break;
+                }
+            }
         }
 
 
@@ -503,16 +514,24 @@
     function subcheckboxclick(obj) {
         /*alert("1");
         alert("2");*/
+        // var arrnum = $(obj).children("input").val();
+        console.log($(obj).children("input").attr(id));
+        console.log(obj.children("input").id);
         if ($(obj).children().prop("checked")) {
-            //          alert("选中");
             $(obj).children("svg").children("use").attr("xlink:href", "#icon-danxuan");
             $(obj).children("svg").attr("fill", "#FB716F");
         } else {
             //       	$(obj).children("svg").children()
             //           alert("没有选中");
-
             $(obj).children("svg").children("use").attr("xlink:href", "#icon-yuanxingweixuanzhong");
             $(obj).children("svg").attr("fill", "#666666");
+
+            for (var i = 0; i < arr2.length ; i++) {
+                if(arrnum == arr2[i]){
+                    arr2.splice(i,1);
+                    break;
+                }
+            }
         }
 
     }
@@ -530,10 +549,11 @@
         document.getElementById(oldhash).style.display = 'none';
         document.getElementById(newhash).style.display = 'block';
     }
+
     //监听路由变化
     window.onhashchange = hashChanged;
 
-    var userId = getUrlParam("userId");
+    // var userId = getUrlParam("userId");
     var username = $("#username").value;
     var sex = $("#sex").value;
     var birth = $("#birth").value;
@@ -546,6 +566,10 @@
         userPhone: phone
     };
 
+    var arr1 = [];
+    var arr2 = [];
+
+
     //添加志愿者
     function userAdd() {
         $.ajax({
@@ -553,7 +577,7 @@
             "data": {
                 userId: userId,
                 volunteersUser: volunteersUser,
-                volunteersUserOvertimes: [],
+                volunteersUserOvertimes: arr1,
 
 
             },
